@@ -1,0 +1,125 @@
+
+ESP32-CAM TABANLI İNSAN TAKİP SİSTEMİ  
+Ders: Mikroişlemciler  
+Dersin Hocası: Dr. Öğr. Üyesi Emre ÖZEREN  
+Teslim Tarihi: 02.05.2025  
+
+EKİP ÜYELERİ VE GÖREVLERİ  
+- EFE YANIK: Arduino IDE, servo kontrol, seri iletişim  
+- ARDA KALA: Donanım kurulumu, emu8086 gösterimi  
+- ABDULLAH YILMAZ: OpenCV ile yüz tespiti  
+
+PROJE DETAYLARI  
+
+Donanım:  
+- ESP32-CAM  
+- 2x SG90 Servo Motor  
+- Pan-Tilt 2 Eksen Mekanizma  
+
+Yazılım:  
+- OpenCV (Python)  
+- Arduino IDE  
+
+HEDEFLENEN İŞLEVLER  
+- ESP32-CAM ile gerçek zamanlı görüntü alınıp OpenCV'de işlenmesi  
+- Tespit edilen insan yüzüne pan-tilt mekanizmasının otomatik yönlendirilmesi  
+- Tek kart çözümü: ESP32 hem kamera hem servo kontrolü sağlar  
+
+DONANIM DETAYLARI  
+
+ESP32-CAM:  
+- OV2640 Kamera (2MP)  
+- Dahili WiFi/Bluetooth  
+- Düşük güç tüketimi  
+- 32-bit çift çekirdek mikrodenetleyici  
+- Arduino IDE/PlatformIO/MicroPython ile uyumlu  
+- 520KB RAM  
+
+SG90 SERVO MOTOR:  
+- Boyutlar: 23.1 x 12.2 x 29 mm  
+- Ağırlık: 9 g  
+- Gerilim: 4.8 - 6.0 VDC  
+- Hız (@4.8V): 0.1 sn/60°  
+- Tork (@6V): 1.8 kg.cm  
+- Plastik dişli kutusu  
+- Dönüş açısı: 0-180°  
+- PWM Sinyali: 500-2400 μs  
+- Kablo uzunluğu: 15 cm  
+
+TARTIŞMA:  
+Alternatif olarak farklı Arduino modelleri kullanılabilirdi.  
+
+AKIŞ DİYAGRAMI  
+1. Başla  
+2. ESP32-CAM görüntü al  
+3. WiFi üzerinden bilgisayara gönder  
+4. OpenCV ile yüz tespiti  
+5. Yüz koordinatlarını hesapla  
+6. ESP32’ye servo açılarını gönder  
+7. Pan-tilt mekanizmasını hareket ettir  
+
+Alternatif akış:  
+- Klavyeden X-Y koordinatı gir  
+- Geçerli mi? → Hayır: Bitir / Evet:  
+- Pan-tilt açısını hesapla  
+- Servo açılarını ekrana yazdır  
+- Register değerlerini göster  
+
+HAFTALIK İLERLEME  
+
+Tamamlananlar:  
+✔️ ESP32-CAM kurulumu  
+✔️ WiFi üzerinden görüntü aktarımı  
+✔️ OpenCV ile temel yüz tespiti  
+
+Önümüzdeki Hafta:  
+∓ Servo entegrasyonu  
+∓ PID kontrol optimizasyonu  
+∓ emu8086 gösterimi  
+
+PROJENİN AMACI VE KULLANIM ALANLARI  
+
+A. Güvenlik Sistemleri  
+- Akıllı kameralar  
+- Hırsız alarm sistemleri  
+
+B. Endüstriyel Uygulamalar  
+- Otomatik kayıt sistemleri  
+- Robotik kollar için nesne takibi  
+
+C. Eğitim ve Araştırma  
+- Yapay zeka + OpenCV entegrasyonu  
+
+D. Sosyal Uygulamalar  
+- Engelli asistanları  
+- Akıllı reklam panoları  
+
+Genel Amaç:  
+Gerçek zamanlı insan takibi yapabilen, düşük maliyetli ve taşınabilir bir sistem geliştirmek.  
+ESP32-CAM'in entegre kamera ve WiFi özellikleri ile:  
+- OpenCV ile yüz tespiti  
+- Pan-tilt mekanizmasıyla otomatik yönlendirme  
+Eğitimsel hedef: Görüntü işleme, mikrodenetleyici programlama, mekatronik entegrasyonu  
+
+KARŞILAŞILAN SORUNLAR & ÇÖZÜMLER  
+
+1. Sorun: Düşük FPS  
+   Çözüm: Görüntü boyutu 640x480 → 320x240'e düşürüldü  
+
+2. Sorun: WiFi bağlantı kopması  
+   Çözüm: Statik IP ataması yapıldı  
+
+SONUÇ & TARTIŞMA  
+
+Başarılar:  
+- Düşük maliyetli, gerçek zamanlı insan takip sistemi  
+- Kablosuz iletişim avantajı  
+
+Geliştirilebilir Yönler:  
+- Işık koşullarına karşı direnç  
+- Çoklu yüz tespiti  
+
+NOT:  
+Bu bir son değil. Proje geliştirilmeye devam edecek.  
+Hedef: Teknofest katılımı.  
+İlgilenenler Abdullah, Arda veya Efe ile iletişime geçebilir.
